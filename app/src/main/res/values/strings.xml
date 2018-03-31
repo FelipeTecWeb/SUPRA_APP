@@ -1,0 +1,12 @@
+<resources>
+        <string name="app_name">SUPRA</string>
+
+    <string name="action_adicionar">Adicionar</string>
+    <string name="action_config">Configurações</string>
+    <string name="action_buscar">Buscar</string>
+    <string name="action_share">Compartilhar</string>
+    <string-array name="arraylist">
+        <item>SUPRA</item>
+    </string-array>
+
+</resources>

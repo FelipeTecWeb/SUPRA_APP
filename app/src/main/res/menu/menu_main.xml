@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/action_config"
+        android:icon="@drawable/ic_configuracoes_white"
+        android:title="@string/action_config"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_adicionar"
+        android:icon="@drawable/ic_adicionar_white"
+        android:title="@string/action_adicionar"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_share"
+        android:icon="@drawable/ic_share_white"
+        android:actionProviderClass="android.widget.ShareActionProvider"
+        android:title="@string/action_share"
+        app:showAsAction="always"
+        tools:ignore="AppCompatResource" />
+
+    <item
+        android:id="@+id/action_buscar"
+        android:layout_width="match_parent"
+        android:icon="@drawable/ic_buscar_white"
+        android:showAsAction="always"
+        android:title="Buscar"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="always"
+        tools:ignore="AppCompatResource" />
+
+
+</menu>
