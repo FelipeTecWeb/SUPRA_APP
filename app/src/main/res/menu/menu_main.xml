@@ -3,23 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+
+    <item
+        android:id="@+id/action_share"
+        android:actionProviderClass="android.widget.ShareActionProvider"
+        android:icon="@drawable/ic_share_white"
+        android:title="Share"
+        app:showAsAction="always" />
+
+
+
     <item
         android:id="@+id/action_config"
         android:icon="@drawable/ic_configuracoes_white"
         android:title="@string/action_config"
         app:showAsAction="always" />
+
     <item
-        android:id="@+id/action_adicionar"
-        android:icon="@drawable/ic_adicionar_white"
-        android:title="@string/action_adicionar"
+        android:id="@+id/action_add"
+        android:icon="@drawable/ic_add_white_24dp"
+        android:title="Add"
         app:showAsAction="always" />
-    <item
-        android:id="@+id/action_share"
-        android:icon="@drawable/ic_share_white"
-        android:actionProviderClass="android.widget.ShareActionProvider"
-        android:title="@string/action_share"
-        app:showAsAction="always"
-        tools:ignore="AppCompatResource" />
 
     <item
         android:id="@+id/action_buscar"
@@ -28,8 +32,5 @@
         android:showAsAction="always"
         android:title="Buscar"
         app:actionViewClass="android.widget.SearchView"
-        app:showAsAction="always"
-        tools:ignore="AppCompatResource" />
-
-
+        app:showAsAction="always"/>
 </menu>

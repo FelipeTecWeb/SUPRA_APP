@@ -18,7 +18,7 @@ import java.util.Arrays;
  * Created by felip on 30/03/2018.
  */
 
-public class ActionBarSearchView extends AppCompatActivity {
+/*public class ActionBarSearchView extends AppCompatActivity {
     ArrayAdapter<String> adapter;
 
     @Override
@@ -54,4 +54,4 @@ public class ActionBarSearchView extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-}
+}*/

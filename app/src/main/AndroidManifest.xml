@@ -16,10 +16,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".TelaInicialActivity" ></activity>
-        <activity android:name=".CadastroActivity" android:parentActivityName=".TelaInicialActivity">
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-            android:value=".TelaInicialActivity"/>
-        </activity>
     </application>
 
 </manifest>
