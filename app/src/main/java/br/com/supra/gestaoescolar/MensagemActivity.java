@@ -1,12 +1,14 @@
 package br.com.supra.gestaoescolar;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
 /**
- * Created by felip on 14/04/2018.
+ * Created by felip on 24/04/2018.
  */
 
 public class MensagemActivity extends DebugActivity {
@@ -16,16 +18,22 @@ public class MensagemActivity extends DebugActivity {
         super.onCreate( savedInstanceState );
 
         setContentView( R.layout.mensagem );
+        Button botaoVoltar = findViewById( R.id.botaoVoltar );
 
-        Button botaoVoltar = (Button) findViewById( R.id.botaoVoltar );
+        botaoVoltar.setOnClickListener( onClickVoltar() );
 
-        botaoVoltar.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setContentView( R.layout.activity_tela_inicial);
-            }
-        } );
     }
 
+    public View.OnClickListener onClickVoltar() {
+        return new View.OnClickListener() {
 
+            @Override
+            public void onClick(View view) {
+                Intent returnIntent = new Intent();
+                returnIntent.putExtra( "result", "Inicio" );
+                setResult( Activity.RESULT_OK, returnIntent );
+                finish();
+            }
+        };
+    }
 }

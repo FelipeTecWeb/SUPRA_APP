@@ -38,25 +38,25 @@ public class MainActivity extends DebugActivity {
                 String txtUsuario = cUsuario.getText().toString();
                 String txtSenha = cSenha.getText().toString();
 
-
-
                 Intent intent = new Intent(MainActivity.this, TelaInicialActivity.class);
 
                 Bundle params = new Bundle();
                 params.putString("nome", txtUsuario);
                 intent.putExtras(params);
 
-
                 startActivityForResult(intent, 1);
             }
         };
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1) {
             String result=data.getStringExtra("result");
             Toast.makeText(MainActivity.this, result, Toast.LENGTH_SHORT).show();
         }
+    }
+    public void signUpActivity(View view){
+        Intent intent = new Intent(this, CadastroActivity.class);
+        startActivity( intent );
     }
 }

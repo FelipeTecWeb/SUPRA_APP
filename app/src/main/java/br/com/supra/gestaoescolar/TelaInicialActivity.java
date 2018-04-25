@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class TelaInicialActivity extends DebugActivity {
+public class TelaInicialActivity extends DebugActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,59 +16,61 @@ public class TelaInicialActivity extends DebugActivity {
 
         setContentView( R.layout.activity_tela_inicial );
 
-        Button botaoNoticia = (Button) findViewById( R.id.botaoNoticia );
-        botaoNoticia.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setContentView( R.layout.activity_main);
-                Toast.makeText( TelaInicialActivity.this, "Noticia", Toast.LENGTH_SHORT ).show();
+        Button botaoNoticia =  findViewById( R.id.botaoNoticia );
+        Button botaoMensagem = findViewById( R.id.botaoMensagem );
+        Button botaoBoletim =  findViewById( R.id.botaoBoletim );
+        Button botaoDiario =   findViewById( R.id.botaoDiario);
+        Button botaoinformacoes = findViewById( R.id.botaoinformacoes);
+        Button botaoSair =     findViewById( R.id.botaoSair );
 
-            }
+        botaoNoticia.setOnClickListener( this );
+        botaoMensagem.setOnClickListener( this );
+        botaoBoletim.setOnClickListener( this );
+        botaoDiario.setOnClickListener( this );
+        botaoinformacoes.setOnClickListener( this );
 
-        } );
 
-        Button botaoMensagem = (Button) findViewById( R.id.botaoMensagem );
-        botaoMensagem.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setContentView( R.layout.mensagem );
-                Toast.makeText( TelaInicialActivity.this, "Mensagem", Toast.LENGTH_SHORT ).show();
-            }
-        } );
-
-        Button botaoBoletim = (Button) findViewById( R.id.botaoBoletim );
-        botaoBoletim.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setContentView( R.layout.boletim );
-                Toast.makeText( TelaInicialActivity.this, "Boletim", Toast.LENGTH_SHORT ).show();
-            }
-        } );
-
-        Button botaoDiario = (Button) findViewById( R.id.botaoDiario);
-        botaoDiario.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setContentView( R.layout.diario );
-                Toast.makeText( TelaInicialActivity.this, "Diario", Toast.LENGTH_SHORT ).show();
-            }
-        } );
-
-        Button botaoinformacoes = (Button) findViewById( R.id.botaoinformacoes);
-        botaoinformacoes.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setContentView( R.layout.informacoes );
-                Toast.makeText( TelaInicialActivity.this, "Informações", Toast.LENGTH_SHORT ).show();
-            }
-        } );
-
-        Button botaoSair = (Button) findViewById( R.id.botaoSair );
-        botaoSair.setOnClickListener( clickSair() );
+        botaoSair.setOnClickListener(clickSair());
 
 
     }
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.botaoNoticia:
+                setContentView( R.layout.noticia );
+                Toast.makeText( this, "Noticia", Toast.LENGTH_SHORT ).show();
+                break;
+        }
+        switch (v.getId()) {
+            case R.id.botaoMensagem:
+                setContentView( R.layout.mensagem );
+                Toast.makeText( this, "Mensagem", Toast.LENGTH_SHORT ).show();
+                break;
 
+        }
+        switch (v.getId()) {
+            case R.id.botaoBoletim:
+                setContentView( R.layout.boletim );
+                Toast.makeText( this, "Boletim", Toast.LENGTH_SHORT ).show();
+                break;
+
+        }
+        switch (v.getId()) {
+            case R.id.botaoDiario:
+                setContentView( R.layout.diario );
+                Toast.makeText( this, "Diario", Toast.LENGTH_SHORT ).show();
+                break;
+
+        }
+        switch (v.getId()) {
+            case R.id.botaoinformacoes:
+                setContentView( R.layout.informacoes );
+                Toast.makeText( this, "Informações", Toast.LENGTH_SHORT ).show();
+                break;
+
+        }
+    }
 
     public View.OnClickListener clickSair() {
         return new View.OnClickListener() {
@@ -83,37 +85,12 @@ public class TelaInicialActivity extends DebugActivity {
         };
     }
 
-
-
-
-
     @Override
-
     public boolean onCreateOptionsMenu(Menu menu) {
 
         getMenuInflater().inflate( R.menu.menu_main, menu );
 
-
         return true;
     }
-
-
-    /*public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_buscar) {
-            Toast.makeText( TelaInicialActivity.this,
-                    "Buscar",
-                    Toast.LENGTH_SHORT ).show();
-            Intent it = new Intent( TelaInicialActivity.this, ActionBarSearchView.class );
-            startActivityForResult( it, 1 );
-
-        }
-
-        return super.onOptionsItemSelected( item );
-
-    }*/
-
-
-
 
 }

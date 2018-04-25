@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
     android:orientation="vertical">
 
     <ImageView
@@ -11,7 +10,7 @@
         android:layout_width="408dp"
         android:layout_height="186dp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/logo" />
+        android:src="@drawable/supra_logo" />
 
     <TextView
         android:id="@+id/textoUsuario"
@@ -45,6 +44,21 @@
         android:layout_height="wrap_content"
         android:textColor="#3678db"
         android:text="Login" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/til_password"
+        android:layout_marginEnd="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:onClick="signUpActivity"
+        android:text="Ainda não tem conta? Cadastre-se"
+        android:textColor="#f9f9f9"
+        android:textSize="18sp" />
 
 
 </LinearLayout>
