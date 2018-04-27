@@ -1,62 +1,75 @@
 package br.com.supra.gestaoescolar;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import android.widget.TextView;
+import android.widget.EditText;
 import android.widget.Toast;
 
 
+public class MainActivity extends AppCompatActivity {
+    SQLiteOpenHelper openHelper;
+    SQLiteDatabase db;
+    Button btcadastro, btentrar;
+    EditText txtnome, txtsobrenome, txtsenha, txtemail, txtphone;
 
-public class MainActivity extends DebugActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        super.onCreate( savedInstanceState );
+
+        setContentView( R.layout.activity_tela_cadastro );
+
+        openHelper = new CadastroActivity(this);
+        txtnome = (EditText)findViewById(R.id.txtnome);
+        txtsobrenome = (EditText)findViewById(R.id.txtsobrenome);
+        txtsenha = (EditText)findViewById(R.id.txtsenha);
+        txtemail = (EditText)findViewById(R.id.txtemail);
+        txtphone = (EditText)findViewById(R.id.txtphone);
+        btcadastro=(Button)findViewById(R.id.btcadastro);
+        btentrar = (Button) findViewById( R.id.btentrar );
 
 
-        TextView cUsuario = (TextView) findViewById( R.id.cUsuario);
-        TextView cSenha = (TextView) findViewById(R.id.cSenha);
+        btcadastro.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-        String txtUsuario = cUsuario.toString();
-        String txtSenha = cSenha.toString();
+                db = openHelper.getWritableDatabase();
+                String nome = txtnome.getText().toString();
+                String sobrenome = txtsobrenome.getText().toString();
+                String senha = txtsenha.getText().toString();
+                String email = txtemail.getText().toString();
+                String phone = txtphone.getText().toString();
+                insertdata(nome, sobrenome, senha, email, phone);
+                Toast.makeText(getApplicationContext(), "Cadastrado com sucesso!!", Toast.LENGTH_LONG).show();
 
-        Button botao = (Button)findViewById(R.id.btLogin);
 
-        botao.setOnClickListener(onClickLogin());
-    }
-
-    private View.OnClickListener onClickLogin() {
-        return new View.OnClickListener() {
-            public void onClick(View v) {
-                TextView cUsuario = (TextView) findViewById(R.id.cUsuario);
-                TextView cSenha = (TextView) findViewById(R.id.cSenha);
-
-                String txtUsuario = cUsuario.getText().toString();
-                String txtSenha = cSenha.getText().toString();
-
-                Intent intent = new Intent(MainActivity.this, TelaInicialActivity.class);
-
-                Bundle params = new Bundle();
-                params.putString("nome", txtUsuario);
-                intent.putExtras(params);
-
-                startActivityForResult(intent, 1);
             }
-        };
+        } );
+
+        btentrar.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(MainActivity.this, login.class);
+                startActivity(it);
+            }
+        } );
     }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 1) {
-            String result=data.getStringExtra("result");
-            Toast.makeText(MainActivity.this, result, Toast.LENGTH_SHORT).show();
-        }
-    }
-    public void signUpActivity(View view){
-        Intent intent = new Intent(this, CadastroActivity.class);
-        startActivity( intent );
+
+
+    public void insertdata(String nome, String sobrenome, String senha, String email, String phone){
+        ContentValues contentValues = new ContentValues(  );
+        contentValues.put( CadastroActivity.COL_2, nome);
+        contentValues.put( CadastroActivity.COL_3, sobrenome);
+        contentValues.put( CadastroActivity.COL_4, senha);
+        contentValues.put( CadastroActivity.COL_5, email);
+        contentValues.put( CadastroActivity.COL_6, phone);
+        long id = db.insert( CadastroActivity.TABLE_NAME, null, contentValues);
     }
 }

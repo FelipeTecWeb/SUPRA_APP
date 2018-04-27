@@ -1,5 +1,5 @@
 <resources>
-        <string name="app_name">SUPRA</string>
+    <string name="app_name">SUPRA</string>
 
     <string name="action_adicionar">Adicionar</string>
     <string name="action_config">Configurações</string>

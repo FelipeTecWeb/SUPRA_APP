@@ -9,7 +9,7 @@
         android:id="@+id/imageView"
         android:layout_width="398dp"
         android:layout_height="174dp"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/supra_logo" />
 
     <TextView
         android:layout_width="match_parent"

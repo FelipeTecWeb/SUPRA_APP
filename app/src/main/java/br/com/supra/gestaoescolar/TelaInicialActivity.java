@@ -38,34 +38,34 @@ public class TelaInicialActivity extends DebugActivity implements View.OnClickLi
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.botaoNoticia:
-                setContentView( R.layout.noticia );
+                setContentView( R.layout.activity_tela_noticia );
                 Toast.makeText( this, "Noticia", Toast.LENGTH_SHORT ).show();
                 break;
         }
         switch (v.getId()) {
             case R.id.botaoMensagem:
-                setContentView( R.layout.mensagem );
+                setContentView( R.layout.activity_tela_mensagem );
                 Toast.makeText( this, "Mensagem", Toast.LENGTH_SHORT ).show();
                 break;
 
         }
         switch (v.getId()) {
             case R.id.botaoBoletim:
-                setContentView( R.layout.boletim );
+                setContentView( R.layout.activity_tela_boleto );
                 Toast.makeText( this, "Boletim", Toast.LENGTH_SHORT ).show();
                 break;
 
         }
         switch (v.getId()) {
             case R.id.botaoDiario:
-                setContentView( R.layout.diario );
+                setContentView( R.layout.activity_tela_diario );
                 Toast.makeText( this, "Diario", Toast.LENGTH_SHORT ).show();
                 break;
 
         }
         switch (v.getId()) {
             case R.id.botaoinformacoes:
-                setContentView( R.layout.informacoes );
+                setContentView( R.layout.activity_tela_informacoes );
                 Toast.makeText( this, "Informações", Toast.LENGTH_SHORT ).show();
                 break;
 
