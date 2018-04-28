@@ -15,15 +15,15 @@
 
     <Button
         android:id="@+id/btLogin"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtsenha"
-        android:layout_marginTop="33dp"
-        android:background="@android:color/white"
+        android:layout_below="@+id/txSenha"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp"
+        android:background="@color/colorNavigation"
         android:shadowRadius="10"
         android:text="Login"
-        android:textColor="#3678db" />
+        android:textColor="#ffffff" />
 
     <EditText
         android:id="@+id/txEmail"
@@ -39,9 +39,9 @@
         android:id="@+id/txSenha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/txtemail"
-        android:layout_below="@+id/txtemail"
-        android:layout_marginTop="24dp"
+        android:layout_alignStart="@+id/txEmail"
+        android:layout_below="@+id/txEmail"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="password"
         android:inputType="textPassword" />
