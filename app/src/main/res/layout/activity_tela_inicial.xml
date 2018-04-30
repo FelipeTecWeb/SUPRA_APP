@@ -11,14 +11,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="br.com.supra.gestaoescolar.TelaInicialActivity">
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="408dp"
-        android:layout_height="186dp"
-        android:layout_alignParentStart="true"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/supra_logo" />
-
     <Button
         android:id="@+id/botaoSair"
         android:layout_width="wrap_content"
@@ -27,7 +19,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:text="Sair"
-        android:textColor="#3678db" />
+        android:layout_marginTop="39dp"
+        android:background="@color/colorNavigation"
+        android:shadowRadius="10"
+        />
 
     <Button
         android:id="@+id/botaoDiario"
@@ -37,7 +32,11 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:text="Diario das Crianças"
-        android:textColor="#3678db" />
+        android:layout_marginTop="39dp"
+        android:background="@color/colorNavigation"
+        android:textColor="#ffffff"
+        android:shadowRadius="10"
+         />
 
     <Button
         android:id="@+id/botaoBoletim"
@@ -47,7 +46,11 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:text="Boletim"
-        android:textColor="#3678db" />
+        android:layout_marginTop="39dp"
+        android:background="@color/colorNavigation"
+        android:textColor="#ffffff"
+        android:shadowRadius="10"
+         />
 
     <Button
         android:id="@+id/botaoNoticia"
@@ -57,7 +60,11 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:text="Noticias"
-        android:textColor="#3678db" />
+        android:layout_marginTop="39dp"
+        android:background="@color/colorNavigation"
+        android:textColor="#FFFFFF"
+        android:shadowRadius="10"
+         />
 
     <Button
         android:id="@+id/botaoMensagem"
@@ -67,7 +74,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:text="Mensagem"
-        android:textColor="#3678db" />
+        android:layout_marginTop="39dp"
+        android:background="@color/colorNavigation"
+        android:shadowRadius="10"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/botaoinformacoes"
@@ -76,7 +86,10 @@
         android:layout_above="@+id/botaoDiario"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:text="Informações"
-        android:textColor="#3678db" />
+        android:background="@color/colorNavigation"
+        android:onClick="chamaCadastro"
+        android:shadowRadius="10"
+        android:text="Adicionar Informações Aluno"
+        android:textColor="#FFFFFF" />
 
 </RelativeLayout>

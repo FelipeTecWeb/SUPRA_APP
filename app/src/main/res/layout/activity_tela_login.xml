@@ -22,6 +22,7 @@
         android:layout_marginTop="39dp"
         android:background="@color/colorNavigation"
         android:shadowRadius="10"
+        android:onClick="chamaMenu"
         android:text="Login"
         android:textColor="#ffffff" />
 

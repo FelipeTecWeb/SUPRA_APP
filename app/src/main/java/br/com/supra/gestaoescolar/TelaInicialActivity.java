@@ -6,9 +6,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-public class TelaInicialActivity extends DebugActivity implements View.OnClickListener{
+public class TelaInicialActivity extends DebugActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,60 +15,17 @@ public class TelaInicialActivity extends DebugActivity implements View.OnClickLi
 
         setContentView( R.layout.activity_tela_inicial );
 
-        Button botaoNoticia =  findViewById( R.id.botaoNoticia );
-        Button botaoMensagem = findViewById( R.id.botaoMensagem );
-        Button botaoBoletim =  findViewById( R.id.botaoBoletim );
-        Button botaoDiario =   findViewById( R.id.botaoDiario);
-        Button botaoinformacoes = findViewById( R.id.botaoinformacoes);
-        Button botaoSair =     findViewById( R.id.botaoSair );
 
-        botaoNoticia.setOnClickListener( this );
-        botaoMensagem.setOnClickListener( this );
-        botaoBoletim.setOnClickListener( this );
-        botaoDiario.setOnClickListener( this );
-        botaoinformacoes.setOnClickListener( this );
+        Button botaoSair = findViewById( R.id.botaoSair );
 
 
         botaoSair.setOnClickListener(clickSair());
 
 
     }
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.botaoNoticia:
-                setContentView( R.layout.activity_tela_noticia );
-                Toast.makeText( this, "Noticia", Toast.LENGTH_SHORT ).show();
-                break;
-        }
-        switch (v.getId()) {
-            case R.id.botaoMensagem:
-                setContentView( R.layout.activity_tela_mensagem );
-                Toast.makeText( this, "Mensagem", Toast.LENGTH_SHORT ).show();
-                break;
-
-        }
-        switch (v.getId()) {
-            case R.id.botaoBoletim:
-                setContentView( R.layout.activity_tela_boleto );
-                Toast.makeText( this, "Boletim", Toast.LENGTH_SHORT ).show();
-                break;
-
-        }
-        switch (v.getId()) {
-            case R.id.botaoDiario:
-                setContentView( R.layout.activity_tela_diario );
-                Toast.makeText( this, "Diario", Toast.LENGTH_SHORT ).show();
-                break;
-
-        }
-        switch (v.getId()) {
-            case R.id.botaoinformacoes:
-                setContentView( R.layout.activity_tela_informacoes );
-                Toast.makeText( this, "Informações", Toast.LENGTH_SHORT ).show();
-                break;
-
-        }
+    public void chamaCadastro(View view){
+        Intent intent2 = new Intent(this, AddAlunoActivity.class);
+        startActivity( intent2 );
     }
 
     public View.OnClickListener clickSair() {
