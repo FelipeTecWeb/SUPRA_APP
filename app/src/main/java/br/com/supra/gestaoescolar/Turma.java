@@ -2,12 +2,12 @@ package br.com.supra.gestaoescolar;
 
 
 public class Turma {
-    private String sala;
-    private String inicia;
-    private String encerra;
-    private String professor;
-    private String materia;
-    private Integer lockStatus;
+    String sala;
+    String inicia;
+    String encerra;
+    String professor;
+    String materia;
+    String lockStatus;
 
     public String getSala() {
         return sala;
@@ -49,11 +49,11 @@ public class Turma {
         this.materia = materia;
     }
 
-    public Integer getLockStatus() {
-        return lockStatus;
+    public String getLockStatus() {
+        return String.valueOf( lockStatus );
     }
 
-    public void setLockStatus(Integer lockStatus) {
+    public void setLockStatus(String lockStatus) {
         this.lockStatus = lockStatus;
     }
 }

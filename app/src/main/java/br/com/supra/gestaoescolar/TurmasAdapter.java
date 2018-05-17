@@ -22,6 +22,7 @@ class TurmasAdapter extends BaseAdapter {
     private final Context context;
     private final List<Turma> listaTurmas;
 
+
     public TurmasAdapter(Context context, List<Turma> listaTurmas) {
         this.context = context;
         this.listaTurmas = listaTurmas;
@@ -45,9 +46,14 @@ class TurmasAdapter extends BaseAdapter {
     @Override
     public View getView(int posicao, View view, ViewGroup viewGroup) {
         // Infla a View
-        View viewText = LayoutInflater.from(context).inflate(R.layout.activity_boletim, viewGroup, false);
+        View viewText = LayoutInflater.from(context).inflate(R.layout.aluno, viewGroup, false);
         // Procura elementos de tela para atualizar
-        TextView t = (TextView)viewText.findViewById(R.id.textItemList);
+        TextView textViewSala = (TextView) viewText.findViewById( R.id.textItemListSala );
+        TextView textViewInicia = (TextView) viewText.findViewById( R.id.textItemListInicia );
+        TextView textViewEncerra = (TextView)viewText.findViewById(R.id.textItemListEncerra);
+        TextView textViewProfessor = (TextView)viewText.findViewById(R.id.textItemListProfessor);
+        TextView textViewMateria = (TextView)viewText.findViewById(R.id.textItemListMateria);
+        TextView textViewLockStatus = (TextView)viewText.findViewById(R.id.textItemListLockStatus);
 
         Turma turma = listaTurmas.get(posicao);
 

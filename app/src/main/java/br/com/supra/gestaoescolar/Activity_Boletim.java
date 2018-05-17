@@ -18,8 +18,10 @@ public class Activity_Boletim extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_boletim );
 
-        String url = "http://supra.educandarioanjinhofeliz.com/api/aluno/turmas";
-        try {
+
+         String url = "http://supra.educandarioanjinhofeliz.com/api/aluno/turmas";
+
+       try {
             new GetDadosAluno( this ).execute( url ).get();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -30,6 +32,5 @@ public class Activity_Boletim extends AppCompatActivity {
 
     }
 
-}
-
+    }
 
