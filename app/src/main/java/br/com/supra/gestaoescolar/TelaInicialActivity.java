@@ -23,9 +23,17 @@ public class TelaInicialActivity extends DebugActivity {
 
 
     }
-    public void chamaCadastro(View view){
-        Intent intent2 = new Intent(this, AddAlunoActivity.class);
-        startActivity( intent2 );
+    public void chamaDiario(View view){
+        Intent chamaDiario = new Intent(this, Activity_DiarioCrianca.class);
+        startActivity( chamaDiario );
+    }
+    public void chamaBoletim(View view){
+        Intent chamaBoletim = new Intent(this, Activity_Boletim.class);
+        startActivity( chamaBoletim );
+    }
+    public void chamaMensagem(View view){
+        Intent chamaMensagem = new Intent(this, Activity_Mensagem.class);
+        startActivity( chamaMensagem );
     }
 
     public View.OnClickListener clickSair() {

@@ -1,4 +1,4 @@
-package br.com.supra.gestaoescolar;
+package br.com.supra.gestaoescolar.crud;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -12,6 +12,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import br.com.supra.gestaoescolar.R;
+
 public class AlunoListActivity extends AppCompatActivity {
 
     private DBManager dbManager;
@@ -23,7 +25,7 @@ public class AlunoListActivity extends AppCompatActivity {
     final String[] from = new String[] { DatabaseHelper._ID,
             DatabaseHelper.SUBJECT, DatabaseHelper.DESC };
 
-    final int[] to = new int[] { R.id.id, R.id.title, R.id.desc, R.id.idade };
+    final int[] to = new int[] { R.id.id, R.id.title, R.id.desc };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,11 +53,9 @@ public class AlunoListActivity extends AppCompatActivity {
                 TextView titleTextView = (TextView) view.findViewById(R.id.title);
                 TextView descTextView = (TextView) view.findViewById(R.id.desc);
 
-
                 String id = idTextView.getText().toString();
                 String title = titleTextView.getText().toString();
                 String desc = descTextView.getText().toString();
-
 
                 Intent modify_intent = new Intent(getApplicationContext(), ModificaAlunoActivity.class);
                 modify_intent.putExtra("title", title);

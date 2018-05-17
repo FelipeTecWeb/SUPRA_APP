@@ -1,4 +1,4 @@
-package br.com.supra.gestaoescolar;
+package br.com.supra.gestaoescolar.crud;
 
 /**
  * Created by felip on 30/04/2018.
@@ -36,12 +36,11 @@ public class DBManager {
         ContentValues contentValue = new ContentValues();
         contentValue.put(DatabaseHelper.SUBJECT, name);
         contentValue.put(DatabaseHelper.DESC, desc);
-
         database.insert(DatabaseHelper.TABLE_NAME, null, contentValue);
     }
 
     public Cursor fetch() {
-        String[] columns = new String[] { DatabaseHelper._ID, DatabaseHelper.SUBJECT, DatabaseHelper.DESC};
+        String[] columns = new String[] { DatabaseHelper._ID, DatabaseHelper.SUBJECT, DatabaseHelper.DESC };
         Cursor cursor = database.query(DatabaseHelper.TABLE_NAME, columns, null, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
@@ -53,7 +52,6 @@ public class DBManager {
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.SUBJECT, name);
         contentValues.put(DatabaseHelper.DESC, desc);
-
         int i = database.update(DatabaseHelper.TABLE_NAME, contentValues, DatabaseHelper._ID + " = " + _id, null);
         return i;
     }

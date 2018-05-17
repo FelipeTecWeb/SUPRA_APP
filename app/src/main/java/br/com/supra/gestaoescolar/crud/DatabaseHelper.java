@@ -1,4 +1,4 @@
-package br.com.supra.gestaoescolar;
+package br.com.supra.gestaoescolar.crud;
 
 /**
  * Created by felip on 30/04/2018.
@@ -17,7 +17,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String _ID = "_id";
     public static final String SUBJECT = "subject";
     public static final String DESC = "description";
-
 
     // Database Information
     static final String DB_NAME = "JOURNALDEV_COUNTRIES.DB";

@@ -1,4 +1,4 @@
-package br.com.supra.gestaoescolar;
+package br.com.supra.gestaoescolar.crud;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +7,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+
+import br.com.supra.gestaoescolar.R;
+import br.com.supra.gestaoescolar.crud.AlunoListActivity;
+import br.com.supra.gestaoescolar.crud.DBManager;
 
 public class ModificaAlunoActivity extends Activity implements OnClickListener {
 
@@ -24,14 +28,13 @@ public class ModificaAlunoActivity extends Activity implements OnClickListener {
 
         setTitle("Modify Record");
 
-        setContentView(R.layout.activity_modifca_aluno );
+        setContentView( R.layout.activity_modifca_aluno );
 
         dbManager = new DBManager(this);
         dbManager.open();
 
         titleText = (EditText) findViewById(R.id.subject_edittext);
         descText = (EditText) findViewById(R.id.description_edittext);
-
 
         updateBtn = (Button) findViewById(R.id.btn_update);
         deleteBtn = (Button) findViewById(R.id.btn_delete);
@@ -41,12 +44,10 @@ public class ModificaAlunoActivity extends Activity implements OnClickListener {
         String name = intent.getStringExtra("title");
         String desc = intent.getStringExtra("desc");
 
-
         _id = Long.parseLong(id);
 
         titleText.setText(name);
         descText.setText(desc);
-
 
         updateBtn.setOnClickListener(this);
         deleteBtn.setOnClickListener(this);

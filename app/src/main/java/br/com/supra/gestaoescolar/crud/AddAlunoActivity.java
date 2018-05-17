@@ -1,4 +1,4 @@
-package br.com.supra.gestaoescolar;
+package br.com.supra.gestaoescolar.crud;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,12 +8,13 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
+import br.com.supra.gestaoescolar.R;
+
 public class AddAlunoActivity extends Activity implements OnClickListener {
 
     private Button addTodoBtn;
     private EditText subjectEditText;
     private EditText descEditText;
-
 
     private DBManager dbManager;
 
@@ -27,7 +28,6 @@ public class AddAlunoActivity extends Activity implements OnClickListener {
 
         subjectEditText = (EditText) findViewById( R.id.subject_edittext );
         descEditText = (EditText) findViewById( R.id.description_edittext );
-
 
         addTodoBtn = (Button) findViewById( R.id.add_record );
 
@@ -43,7 +43,6 @@ public class AddAlunoActivity extends Activity implements OnClickListener {
 
                 final String name = subjectEditText.getText().toString();
                 final String desc = descEditText.getText().toString();
-
 
                 dbManager.insert( name, desc );
 

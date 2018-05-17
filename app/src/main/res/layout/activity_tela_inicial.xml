@@ -15,81 +15,60 @@
         android:id="@+id/botaoSair"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:text="Sair"
-        android:layout_marginTop="39dp"
-        android:background="@color/colorNavigation"
+        android:layout_alignStart="@+id/botaoBoletim"
+        android:layout_below="@+id/botaoBoletim"
+        android:layout_marginTop="51dp"
+        android:background="@drawable/redondo_button"
         android:shadowRadius="10"
-        />
+
+        android:text="Sair" />
 
     <Button
         android:id="@+id/botaoDiario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/botaoNoticia"
+        android:layout_alignParentBottom="false"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentRight="false"
         android:layout_alignParentStart="true"
-        android:text="Diario das Crianças"
-        android:layout_marginTop="39dp"
-        android:background="@color/colorNavigation"
-        android:textColor="#ffffff"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="68dp"
+        android:background="@drawable/redondo_button"
+        android:onClick="chamaDiario"
         android:shadowRadius="10"
-         />
+        android:text="Diario das Crianças"
+        android:textColor="#ffffff" />
 
     <Button
         android:id="@+id/botaoBoletim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/botaoSair"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
+        android:layout_alignStart="@+id/botaoMensagem"
+        android:layout_below="@+id/botaoMensagem"
+        android:layout_marginTop="57dp"
+        android:background="@drawable/redondo_button"
+        android:onClick="chamaBoletim"
+        android:shadowRadius="10"
         android:text="Boletim"
-        android:layout_marginTop="39dp"
-        android:background="@color/colorNavigation"
-        android:textColor="#ffffff"
-        android:shadowRadius="10"
-         />
-
-    <Button
-        android:id="@+id/botaoNoticia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/botaoMensagem"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:text="Noticias"
-        android:layout_marginTop="39dp"
-        android:background="@color/colorNavigation"
-        android:textColor="#FFFFFF"
-        android:shadowRadius="10"
-         />
+        android:textColor="#ffffff" />
 
     <Button
         android:id="@+id/botaoMensagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/botaoBoletim"
+        android:layout_alignParentBottom="false"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/botaoDiario"
+        android:layout_marginTop="59dp"
+        android:background="@drawable/redondo_button"
+        android:onClick="chamaMensagem"
+        android:shadowRadius="10"
         android:text="Mensagem"
-        android:layout_marginTop="39dp"
-        android:background="@color/colorNavigation"
-        android:shadowRadius="10"
-        android:textColor="#FFFFFF" />
-
-    <Button
-        android:id="@+id/botaoinformacoes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/botaoDiario"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:background="@color/colorNavigation"
-        android:onClick="chamaCadastro"
-        android:shadowRadius="10"
-        android:text="Adicionar Informações Aluno"
         android:textColor="#FFFFFF" />
 
 </RelativeLayout>

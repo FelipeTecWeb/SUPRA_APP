@@ -20,9 +20,8 @@
         android:layout_below="@+id/txSenha"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="39dp"
-        android:background="@color/colorNavigation"
+        android:background="@drawable/redondo_button"
         android:shadowRadius="10"
-        android:onClick="chamaMenu"
         android:text="Login"
         android:textColor="#ffffff" />
 
