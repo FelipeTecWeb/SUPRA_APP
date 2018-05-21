@@ -16,9 +16,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".TelaInicialActivity"></activity>
-        <activity android:name=".crud.AddAlunoActivity" />
-        <activity android:name=".crud.AlunoListActivity"></activity>
-        <activity android:name=".crud.ModificaAlunoActivity"></activity>
         <activity android:name=".Activity_DiarioCrianca"></activity>
         <activity android:name=".Activity_Boletim"></activity>
         <activity android:name=".Activity_Mensagem"></activity>

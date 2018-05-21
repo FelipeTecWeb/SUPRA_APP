@@ -19,8 +19,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@RequiresApi(api = Build.VERSION_CODES.CUPCAKE)
-public class GetDadosAluno extends AsyncTask<String, Void, List<Turma>> {
+/*@RequiresApi(api = Build.VERSION_CODES.CUPCAKE)
+/*public class GetDadosAluno extends AsyncTask<String, Void, List<Turma>> {
 
     private Context contexto;
 
@@ -37,7 +37,11 @@ public class GetDadosAluno extends AsyncTask<String, Void, List<Turma>> {
         List<Turma> turma = null;
         try {
             json = http.doGetApi( url, null, TOKEN.getString( "token", "" ) );
-        } catch (IOException ex) {
+            turma = this.parseJSON(json);
+        }
+            catch (IOException ex) {
+
+            return turma;
 
         }
         Log.d( "MYAPP", "Retorno: " + json );
@@ -46,37 +50,39 @@ public class GetDadosAluno extends AsyncTask<String, Void, List<Turma>> {
 
     }
 
-    private List<Turma> parseJSON(String json) {
-        List<Turma> turmas = new ArrayList<Turma>();
-        try {
-
-            JSONArray jsonTurmas = new JSONObject(json).optJSONArray("turmas");
-            for(int i = 0; i < jsonTurmas.length(); i++) {
-                JSONObject jsonTurma = jsonTurmas.getJSONObject(i);
-                Turma c = new Turma();
-
-
-                c.sala = jsonTurma.optString("sala");
-                c.inicia = jsonTurma.optString("inicia");
-                c.encerra = jsonTurma.optString("encerra");
-                c.professor = jsonTurma.optString("professor");
-                c.materia = jsonTurma.optString("materia");
-                c.lockStatus = jsonTurma.optString("lockStatus");
-
-
-                turmas.add(c);
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return turmas;
-    }
-
     protected void onPostExecute(List<Turma> retorno) {
         Toast.makeText( contexto, retorno.toString(), Toast.LENGTH_LONG ).show();
         ListView lista = (ListView) ((Activity) contexto).findViewById( R.id.lista );
         lista.setAdapter( new TurmasAdapter( contexto, retorno ) );
     }
+
+    private List<Turma> parseJSON(String json) {
+        List<Turma> turma = new ArrayList<Turma>();
+
+        try {
+
+            JSONArray jsonTurmas = new JSONObject(json).optJSONArray("cervejas");
+            for(int i = 0; i < jsonTurmas.length(); i++) {
+                JSONObject jsonTurma = jsonTurmas.getJSONObject(i);
+                Turma c = new Turma();
+
+
+                c.sala = jsonTurma.optString("nome");
+                c.inicia = jsonTurma.optString("imagem");
+                c.encerra = jsonTurma.optString("tipo");
+                c.professor = jsonTurma.optString("pais");
+                c.materia = jsonTurma.optString("endereco");
+                c.lockStatus = jsonTurma.optInt("latitude");
+
+
+                turma.add(c);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return turma;
+    }
+
 
   /*  private List<Turma> parseJSON(String json) {
         List<Turma> turmas = new ArrayList<Turma>();
@@ -100,4 +106,4 @@ public class GetDadosAluno extends AsyncTask<String, Void, List<Turma>> {
         return turmas;
     }*/
 
-}
+

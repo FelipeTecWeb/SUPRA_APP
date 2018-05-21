@@ -1,5 +1,6 @@
 package br.com.supra.gestaoescolar;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,7 +9,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
+/**
+ * Created by felip on 19/05/2018.
+ */
 
 public class MainActivity extends AppCompatActivity {
 
